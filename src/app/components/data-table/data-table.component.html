@@ -1,1 +1,16 @@
-<p>data-table works!</p>
+<div class="row">
+  <div class="col-lg-4">
+    <input *ngIf="generalConfig.filtering" placeholder="{{config.globalFilterText}}" [ngTableFiltering]="generalConfig.filtering" class="form-control" (tableChanged)="onChangeTable(generalConfig)"/>
+  </div>
+  <div class="col-lg-8 text-center">
+    <label class="col-form-label pt-2 pb-0 pt-xl-0 float-lg-right" *ngIf="generalConfig.paging">Page: {{page}} / {{numPages}}</label>
+  </div>
+</div>
+<ng-container outsideBody>
+  <div class="table-responsive text-nowrap">
+    <ng-table [config]="generalConfig" (tableChanged)="onChangeTable(generalConfig)" (cellClicked)="onCellClick($event)" [rows]="rows" [columns]="columns"></ng-table>
+  </div>
+</ng-container>
+<ng-container footer>
+  <ngb-pagination *ngIf="generalConfig.paging" class="d-flex justify-content-center" [(page)]="page" [maxSize]="maxSize" [boundaryLinks]="true" [collectionSize]="length" [rotate]="false" (pageChange)="onChangeTable(generalConfig, $event)" (numPages)="numPages = $event"></ngb-pagination>
+</ng-container>
