@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataTableConfig } from './models/data-table.models';
 
 @Component({
-  selector: 'app-data-table',
+  selector: 'ch-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })

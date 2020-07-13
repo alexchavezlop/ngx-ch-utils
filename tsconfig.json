@@ -1,30 +1,32 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-      "baseUrl": "./",
-      "outDir": "./dist/out-tsc",
-      "sourceMap": true,
-      "declaration": false,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "importHelpers": true,
-      "target": "es2015",
-      "typeRoots": [
-          "node_modules/@types"
-      ],
-      "lib": [
-          "es2018",
-          "dom"
-      ],
-      "paths": {
-          "@core/*": ["src/app/core/imports/*"],
-          "@services/*": ["src/app/core/services/*"],
-          "@utils/*": ["src/app/core/utils/*"],
-          "@models/*": ["src/app/core/models/*"],
-          "@environments/*": ["src/environments/*"],
-          "@state/*": ["src/app/core/state/*"]
-      }
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "ngx-ch-utils": [
+        "dist/ngx-ch-utils/ngx-ch-utils",
+        "dist/ngx-ch-utils"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

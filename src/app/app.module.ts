@@ -4,15 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { SecretRouteComponent } from './secret-route.component';
+import { ComponentsModule } from 'projects/ngx-ch-utils/src/lib/components/components.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SecretRouteComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ComponentsModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+  }
+}
